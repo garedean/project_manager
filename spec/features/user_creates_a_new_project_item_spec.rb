@@ -8,6 +8,6 @@ feature 'User creates a new project item' do
 
     click_link 'New Item'
 
-    expect(page).to have_content 'New Task'
+    expect(page).to have_content 'New Item'
   end
 end
