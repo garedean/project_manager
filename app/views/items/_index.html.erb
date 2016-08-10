@@ -16,6 +16,5 @@
 <% end %>
 </ul>
 
-<%= link_to 'New Item', new_project_path(project) %>
-<%= link_to 'Clear Completed Items', clear_project_path(project),
-      :method => :delete, :id => "clearer" %>
+<%= link_to 'New Item', new_project_path(project), class: "btn btn-primary" %>
+<%= link_to 'Clear Completed Items', clear_project_path(project), class: "btn btn-default", :method => :delete, :id => "clearer" %>

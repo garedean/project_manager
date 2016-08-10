@@ -11,22 +11,27 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <h1>Todo app</h1>
-      <nav>
-        <ul>
-          <li><%= link_to 'Projects', projects_path %></li>
-        </ul>
-      </nav>
-    </header>
+    <div class="container">
+      <div class="page-header">
+        <h1>Todo app</h1>
+        <!-- <nav>
+          <ul>
+            <li><%= link_to 'Projects', projects_path %></li>
+          </ul>
+        </nav> -->
+      </div>
 
-    <div id="main">
       <p id="notice"><%= notice %></p>
-      <%= yield %>
-    </div>
 
-    <footer>
-      <p>2015</p>
-    </footer>
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
+
+      <footer>
+        <p>2015</p>
+      </footer>
+    </div>
   </body>
 </html>
