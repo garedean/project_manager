@@ -48,10 +48,11 @@ class ProjectsController < ApplicationController
   end
 
   def clear
-    @project.items.complete.destroy_all
+    cleared_projects = @project.items.complete.destroy_all
+
     respond_to do |format|
       format.html { redirect_to project_path(@project),
-                    :notice => 'Completed items were successfully cleared.' }
+        :notice => cleared_flash_message(cleared_projects: cleared_projects) }
     end
   end
 
@@ -63,5 +64,12 @@ private
   def project_params
     params.require(:project).permit(:title)
   end
-end
 
+  def cleared_flash_message(cleared_projects:)
+    if cleared_projects.any?
+      'Completed items were successfully cleared.'
+    else
+      'There are no completed items for this project.'
+    end
+  end
+end
