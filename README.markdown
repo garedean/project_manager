@@ -12,9 +12,9 @@ The specs are already all green and should still be green when you're finished.
 
 BUGS
 
-- (!!) Creating todo items is currently broken
+- (!!) Creating todo items is currently broken – COMPLETED
 
-- (!) Projects with the same title should not be allowed
+- (!) Projects with the same title should not be allowed — COMPLETED
 
 - () When the option to clear completed items is clicked and there are no
   completed items the message should not say "Completed items were successfully
@@ -40,4 +40,3 @@ For example:
 
     Project Two
     - [ ] Todo Item 1
-
