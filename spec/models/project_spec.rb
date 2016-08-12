@@ -20,5 +20,11 @@ RSpec.describe Project, :type => :model do
       expect(subject).to_not be_valid
       expect(subject.errors.keys).to eq [:title]
     end
+
+    it "requires a unique title" do
+      subject.save
+
+      expect(Project.create(params)).to_not be_valid
+    end
   end
 end
