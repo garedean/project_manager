@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.where(deleted: false)
-
   end
 
   def show
@@ -49,7 +48,7 @@ class ProjectsController < ApplicationController
   end
 
   def clear
-    cleared_projects = @project.items.complete.destroy_all
+    cleared_projects = Project.soft_delete_all(@project.items.complete)
 
     respond_to do |format|
       format.html { redirect_to project_path(@project),

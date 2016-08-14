@@ -30,4 +30,13 @@ RSpec.describe Item, :type => :model do
       expect(duplicate_action.errors.keys).to include :action
     end
   end
+
+  describe "deletions" do
+    it 'retains items but flags it as deleted' do
+      subject.save
+      subject.soft_delete
+
+      expect(subject.deleted).to be true
+    end
+  end
 end

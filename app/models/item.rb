@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  include SoftDeletable
+
   belongs_to :project
   validates :action,
     :presence => true,

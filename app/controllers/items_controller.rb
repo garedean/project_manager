@@ -45,4 +45,3 @@ private
     params.require(:item).permit(:action, :done)
   end
 end
-

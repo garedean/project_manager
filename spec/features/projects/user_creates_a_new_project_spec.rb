@@ -9,7 +9,6 @@ RSpec.feature 'User creates a new project' do
     find("#new_project input[type='submit']").click
 
     click_link 'Projects'
-
     click_link 'New Project'
 
     fill_in 'project_title', with: 'The Big Lebowski 2'

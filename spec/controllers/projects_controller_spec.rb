@@ -156,14 +156,26 @@ RSpec.describe ProjectsController, :type => :controller do
     end
 
     it 'does not destroy incomplete items' do
-      delete :clear, { :id => project.to_param }
-      expect(project.items.count).to eq(1)
+      expect { delete :clear, { :id => project.to_param } }
+        .to_not change(Project, :count)
     end
 
-    it 'destroys complete items' do
+    it 'does not destroy complete items' do
+      project.items.first.update(:done => true)
+
+      expect { delete :clear, { :id => project.to_param } }
+        .to_not change(Project, :count)
+    end
+
+    it "does not flag uncleared items as 'deleted'" do
+      delete :clear, { :id => project.to_param }
+      expect(project.items.first.deleted).to be false
+    end
+
+    it "flags cleared items as 'deleted' (does a soft delete)" do
       project.items.first.update(:done => true)
       delete :clear, { :id => project.to_param }
-      expect(project.reload.items.count).to eq(0)
+      expect(project.items.first.deleted).to be true
     end
   end
 end

@@ -2,7 +2,7 @@
   <% if @project.items.empty? %>
   <li>No items.</li>
   <% end %>
-<% @project.items.each do |item| %>
+<% @project.uncleared_items.each do |item| %>
   <li class="<%= "#{item.done? ? 'done' : 'not-done'}" %>">
     <%= link_to item.action, edit_project_item_path(@project, item) %>
     <% unless item.done? %>

@@ -25,7 +25,7 @@ IMPROVEMENTS
 
 - (!) Switch to "soft" deletes of projects and items. That is flag them as
   deleted in the database and hide them from the UI, but don't actually delete
-  them from the database. - COMPLETE
+  them from the database. - COMPLETED
 - () The UI is a mess. Try and clean it up a bit and make it consistent.
 
 NEW FEATURES
