@@ -30,7 +30,7 @@ IMPROVEMENTS
 
 NEW FEATURES
 
-- (!) Add a rake task that outputs all projects and their todo items to the command line.
+- (!) Add a rake task that outputs all projects and their todo items to the command line. - COMPLETED
 
 For example:
 
