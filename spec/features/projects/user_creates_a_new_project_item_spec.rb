@@ -1,4 +1,6 @@
-feature 'User creates a new project item' do
+require 'rails_helper'
+
+RSpec.feature 'User creates a new project item' do
   before do
     Project.create(title: 'The Big Lebowski 2')
   end

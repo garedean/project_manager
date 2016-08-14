@@ -27,4 +27,13 @@ RSpec.describe Project, :type => :model do
       expect(Project.create(params)).to_not be_valid
     end
   end
+
+  describe "deletions" do
+    it 'retains project but flags it as deleted' do
+      subject.save
+      subject.soft_delete
+
+      expect(subject.deleted).to be true
+    end
+  end
 end

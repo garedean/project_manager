@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   before_action :set_project, :except => [:index, :new, :create]
 
   def index
-    @projects = Project.all
+    @projects = Project.where(deleted: false)
+
   end
 
   def show
@@ -40,7 +41,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
+    @project.soft_delete
     respond_to do |format|
       format.html { redirect_to projects_path,
                     :notice => 'Project was successfully destroyed.' }

@@ -1,4 +1,6 @@
-feature 'User clears project items' do
+require 'rails_helper'
+
+RSpec.feature 'User clears project items' do
   before do
     project = Project.create(title: 'The Big Lebowski 2')
     project.items.create(action: "Call Steve Buscemi's agent")

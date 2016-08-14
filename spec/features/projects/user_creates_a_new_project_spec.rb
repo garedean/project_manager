@@ -1,4 +1,6 @@
-feature 'User creates a new project' do
+require 'rails_helper'
+
+RSpec.feature 'User creates a new project' do
   scenario 'they cannot add the same project twice' do
     visit root_path
     click_link 'New Project'

@@ -19,12 +19,13 @@ BUGS
 - () When the option to clear completed items is clicked and there are no
   completed items the message should not say "Completed items were successfully
   cleared." but instead "There are no completed items for this project."
+  — COMPLETED
 
 IMPROVEMENTS
 
 - (!) Switch to "soft" deletes of projects and items. That is flag them as
   deleted in the database and hide them from the UI, but don't actually delete
-  them from the database.
+  them from the database. - COMPLETE
 - () The UI is a mess. Try and clean it up a bit and make it consistent.
 
 NEW FEATURES
