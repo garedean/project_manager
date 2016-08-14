@@ -41,3 +41,7 @@ For example:
 
     Project Two
     - [ ] Todo Item 1
+
+GARRETT'S BACKLOG
+
+- Don't show 'Projects' link on the projects index page

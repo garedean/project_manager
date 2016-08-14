@@ -9,7 +9,7 @@ RSpec.feature 'User clears project items' do
   scenario 'clearing items recently cleared shows correct flash' do
     visit project_path(1)
 
-    find(".not-done [type='submit']").click
+    click_link 'Mark as Completed'
 
     click_link 'Clear Completed Items'
     expect(page).to have_content 'Completed items were successfully cleared.'
