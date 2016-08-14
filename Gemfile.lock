@@ -72,6 +72,7 @@ GEM
     execjs (2.7.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    humanize (1.1.2)
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -194,6 +195,7 @@ DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 4.1.0)
   database_cleaner
+  humanize
   jbuilder (~> 2.0)
   jquery-rails
   launchy (~> 2.4, >= 2.4.3)
