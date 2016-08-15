@@ -1,2 +1,4 @@
-<h2><%= link_to @project.title, edit_project_path(@project) %> Items</h2>
+<%= link_to 'Edit Project', edit_project_path(@project) %>
+
+<h3>Items</h3>
 <%= render partial: 'items/index', :locals => { :project => @project } %>

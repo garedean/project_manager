@@ -12,7 +12,7 @@ RSpec.feature 'User creates a new project item' do
     fill_in 'item_action', with: "Call Steve Buscemi's agent"
     find(".new_item input[type='submit']").click
 
-    expect(page).to have_content 'The Big Lebowski 2 Items'
+    expect(page).to have_content 'Projects » The Big Lebowski 2'
     expect(page).to have_content "Call Steve Buscemi's agent"
   end
 end

@@ -14,12 +14,15 @@
     <div class="container">
       <div class="page-header">
         <h1>Todo app</h1>
-        <nav>
-          <ul>
-            <li><%= link_to 'Projects', projects_path %></li>
-          </ul>
-        </nav>
       </div>
+
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <%= render_breadcrumbs %>
+          </li>
+        </ol>
+      </nav>
 
       <p id="notice"><%= notice %></p>
 

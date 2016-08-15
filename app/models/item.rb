@@ -8,4 +8,5 @@ class Item < ActiveRecord::Base
                      :message => 'should be unique within a project' }
   validates :project_id, :presence => true
   scope :complete, -> { where(:done => true) }
+  scope :complete_and_undeleted, -> { where(:done => true, :deleted => false) }
 end

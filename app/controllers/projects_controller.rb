@@ -1,5 +1,11 @@
 class ProjectsController < ApplicationController
   before_action :set_project, :except => [:index, :new, :create]
+  before_action :set_breadcrumb
+
+  def set_breadcrumb
+    add_breadcrumb "Projects", :root_path
+    add_breadcrumb @project.title, project_path(@project) if @project
+  end
 
   def index
     @projects = Project.where(deleted: false)
@@ -10,9 +16,11 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    add_breadcrumb "New Project", new_project_path
   end
 
   def edit
+    add_breadcrumb @project.title
   end
 
   def create
@@ -24,6 +32,7 @@ class ProjectsController < ApplicationController
                       :notice => 'Project was successfully created.' }
       else
         format.html { render :action => 'new' }
+        add_breadcrumb "New Project"
       end
     end
   end
@@ -35,6 +44,7 @@ class ProjectsController < ApplicationController
                       :notice => 'Project was successfully updated.' }
       else
         format.html { render :action => 'edit' }
+        add_breadcrumb @project.title_was
       end
     end
   end
@@ -48,7 +58,7 @@ class ProjectsController < ApplicationController
   end
 
   def clear
-    cleared_projects = Project.soft_delete_all(@project.items.complete)
+    cleared_projects = Project.soft_delete_all(@project.items.complete_and_undeleted)
 
     respond_to do |format|
       format.html { redirect_to project_path(@project),
